@@ -2,5 +2,11 @@
 
 It uses the following libraries
 
-1. Material UI [@material-ui/core](https://material-ui.com/) 4.9.0
-2. Material UI [@material-ui/icons](https://material-ui.com/) 4.5.1
+### Material UI
+- Material UI [@material-ui/core](https://material-ui.com/) 4.9.0
+- Material UI Icons [@material-ui/icons](https://material-ui.com/) 4.5.1
+
+### Redux
+
+- Redux [redux](https://redux.js.org/) 7.1.3
+- React Redux [react-redux](https://redux.js.org/) 4.0.5

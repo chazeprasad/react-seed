@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import './App.scss';
+import HomePage from './page/home/HomePage';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -24,6 +25,7 @@ export default function App() {
         <Typography variant="h4" component="h1" gutterBottom align="center">
           React Seed
         </Typography>
+        <HomePage />
         <Copyright />
       </Box>
     </Container>
