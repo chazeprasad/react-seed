@@ -10,3 +10,4 @@ It uses the following libraries
 
 - Redux [redux](https://redux.js.org/) 7.1.3
 - React Redux [react-redux](https://redux.js.org/) 4.0.5
+- Redux Saga [react-saga](https://redux-saga.js.org/) 1.1.3

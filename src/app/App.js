@@ -5,6 +5,9 @@ import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import './App.scss';
 import HomePage from './page/home/HomePage';
+import { useDispatch } from 'react-redux';
+import { Action } from './core/Action';
+import { AppAction } from './AppState';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -19,6 +22,9 @@ function Copyright() {
 }
 
 export default function App() {
+  const dispatch = useDispatch()
+  dispatch(Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG))
+  
   return (
     <Container maxWidth="sm">
       <Box my={4}>
