@@ -9,11 +9,7 @@ function* LoadAppConfigWorker(action) {
         const response = yield call(AppService.LoadAppConfig)
         if (response.status >= 200 && response.status < 300) {
             const { data } = response
-            Logger.Log('SUCCESS')
-            Logger.Info('SUCCESS')
-            Logger.Trace('SUCCESS')
-            Logger.Warn('SUCCESS')
-            Logger.Error('SUCCESS')
+            Logger.Info(AppAction.REQUEST_LOAD_APP_CONFIG_SUCCESS)
             yield put(
                 Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG_SUCCESS, {
                     config: data,

@@ -1,4 +1,5 @@
 import debug from 'debug';
+import { AppEnv } from '../core/Env';
 
 const BASE = 'APP';
 
@@ -10,14 +11,12 @@ const COLOUR = {
   ERROR: '#eb3b5a'
 }; // choose better colours :)
 
-const enabled = true //process.env.NODE_ENV === Env.PRODUCTION
+const enabled = true // process.env.NODE_ENV === AppEnv.PRODUCTION
 
 const GenerateMessage = (level, message, source) => {
-    // Set the prefix which will cause debug to enable the message
     const namespace = `${BASE}:${level}`;
     const log = debug(namespace);
     
-    // Set the colour of the message based on the level
     log.color = COLOUR[level];
     log.enabled = enabled;
     
