@@ -3,7 +3,6 @@ import createSagaMiddleware from 'redux-saga'
 import { RootReducer } from './State'
 import { Saga } from './Saga'
 
-
 const middlewares = []
 const enhancers = []
 
@@ -15,10 +14,11 @@ enhancers.push(applyMiddleware(...middlewares))
 const ConfigureStore = () => {
     const store = createStore(RootReducer(), compose(...enhancers))
     sagaMiddleware.run(Saga.Watcher)
-    window.store = store;
+    window.store = store
+
     return store
 }
 
 export const Store = {
-    ConfigureStore
+    ConfigureStore,
 }

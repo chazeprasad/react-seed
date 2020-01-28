@@ -7,8 +7,8 @@ const AppAction = {
 const initialState = {
     config: {},
     loading: false,
-    error: false
-};
+    error: false,
+}
 
 const AppReducer = (state = initialState, action) => {
     let newState = null
@@ -17,27 +17,24 @@ const AppReducer = (state = initialState, action) => {
         case AppAction.REQUEST_LOAD_APP_CONFIG_SUCCESS:
             newState = {
                 ...state,
-                config: action.payload.config
+                config: action.payload.config,
             }
-            break;
+            break
         case AppAction.REQUEST_LOAD_APP_CONFIG_ERROR:
             newState = {
                 ...state,
-                error: action.payload.error
+                error: action.payload.error,
             }
-            break;
-    
+            break
+
         default:
             newState = {
-                ...state
+                ...state,
             }
-            break;
+            break
     }
 
     return newState
 }
 
-export {
-    AppAction,
-    AppReducer
-}
+export { AppAction, AppReducer }

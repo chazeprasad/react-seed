@@ -1,15 +1,13 @@
 const initialState = {
-    name: 'Home'
+    name: 'Home',
 }
 
 const HomeReducer = (state = initialState, action) => {
-    let newState = null;
-    
-    newState = {...state}
+    let newState = null
+
+    newState = { ...state }
 
     return newState
 }
 
-export {
-    HomeReducer
-}
+export { HomeReducer }

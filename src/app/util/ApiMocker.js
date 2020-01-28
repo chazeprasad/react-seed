@@ -1,19 +1,20 @@
 const sleep = (duration, data) => {
-    return new Promise(function(resolve, reject){
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-        resolve(data);
+            resolve(data)
         }, duration)
-    });
-};
+    })
+}
 
-const MockResponse = (json, delay=100, status=200) => {
+const MockResponse = (json, delay = 100, status = 200) => {
     const data = {
-        status: status,
-        data: json
-    };
-    return sleep(delay, data);
+        status,
+        data: json,
+    }
+
+    return sleep(delay, data)
 }
 
 export const ApiMocker = {
-    MockResponse
+    MockResponse,
 }

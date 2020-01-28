@@ -20,10 +20,12 @@ function* LoadAppConfigWorker(action) {
         }
     } catch (error) {
         Logger.Error(error)
-        yield put(Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG_ERROR, { error }))
+        yield put(
+            Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG_ERROR, { error })
+        )
     }
 }
 
 export const AppSaga = {
-    LoadAppConfigWorker
+    LoadAppConfigWorker,
 }

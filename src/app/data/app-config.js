@@ -1,4 +1,4 @@
 export const AppConfig = {
     baseUrl: '/',
-    apiBaseUrl: '/api'
+    apiBaseUrl: '/api',
 }

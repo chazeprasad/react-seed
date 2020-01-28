@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import { HomeReducer } from "../page/home/HomeState";
+import { combineReducers } from 'redux'
+import { HomeReducer } from '../page/home/HomeState'
 
 const RootReducer = () => {
     return combineReducers({
@@ -7,6 +7,4 @@ const RootReducer = () => {
     })
 }
 
-export {
-    RootReducer
-}
+export { RootReducer }

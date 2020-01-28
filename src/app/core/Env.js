@@ -5,5 +5,5 @@ const PRODUCTION = 'production'
 export const AppEnv = {
     DEVELOPMENT,
     TEST,
-    PRODUCTION
+    PRODUCTION,
 }
