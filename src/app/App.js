@@ -2,32 +2,33 @@ import React from 'react'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import Link from '@material-ui/core/Link'
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+  } from 'react-router-dom'
 import './App.scss'
 import { useDispatch } from 'react-redux'
 import HomePage from './page/home/HomePage'
 import { Action } from './core/Action'
 import { AppAction } from './AppState'
-
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    )
-}
+import Topics from './page/topic/Topics'
+import AboutPage from './page/about/AboutPage'
 
 export default function App() {
     const dispatch = useDispatch()
-    dispatch(Action.Create(AppAction.REQUEST_GET_APP_CONFIG, { url: process.env.REACT_APP_CONFIG }))
+    dispatch(
+        Action.Create(AppAction.REQUEST_GET_APP_CONFIG, {
+            url: process.env.REACT_APP_CONFIG,
+        }),
+    )
 
     return (
-        <Container maxWidth="sm">
+        
+                <Router>
+                    <Container maxWidth="sm">
             <Box my={4}>
                 <Typography
                     variant="h4"
@@ -37,10 +38,34 @@ export default function App() {
                 >
                     React Seed
                 </Typography>
-    <h4>{process.env.REACT_APP_CONFIG}</h4>
-                <HomePage />
-                <Copyright />
-            </Box>
+  
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      
+        </Box>
         </Container>
+    </Router>
+  
     )
 }

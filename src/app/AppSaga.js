@@ -6,7 +6,9 @@ import { Logger } from './util/Logger'
 
 function* LoadAppConfigWorker(action) {
     try {
-        const response = yield call(AppService.LoadAppConfig, { url: action.payload.url })
+        const response = yield call(AppService.LoadAppConfig, {
+            url: action.payload.url,
+        })
         if (response.status >= 200 && response.status < 300) {
             const { data } = response
             Logger.Info(AppAction.REQUEST_GET_APP_CONFIG_SUCCESS)
