@@ -24,7 +24,7 @@ function Copyright() {
 
 export default function App() {
     const dispatch = useDispatch()
-    dispatch(Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG))
+    dispatch(Action.Create(AppAction.REQUEST_GET_APP_CONFIG, { url: process.env.REACT_APP_CONFIG }))
 
     return (
         <Container maxWidth="sm">
@@ -37,6 +37,7 @@ export default function App() {
                 >
                     React Seed
                 </Typography>
+    <h4>{process.env.REACT_APP_CONFIG}</h4>
                 <HomePage />
                 <Copyright />
             </Box>

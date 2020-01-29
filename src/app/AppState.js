@@ -1,7 +1,7 @@
 const AppAction = {
-    REQUEST_LOAD_APP_CONFIG: '@@app/request-load-app-config',
-    REQUEST_LOAD_APP_CONFIG_SUCCESS: '@@app/request-load-app-config-success',
-    REQUEST_LOAD_APP_CONFIG_ERROR: '@@app/request-load-app-config-error',
+    REQUEST_GET_APP_CONFIG: '@@app/request-get-app-config',
+    REQUEST_GET_APP_CONFIG_SUCCESS: '@@app/request-get-app-config-success',
+    REQUEST_GET_APP_CONFIG_ERROR: '@@app/request-get-app-config-error',
 }
 
 const initialState = {
@@ -14,13 +14,13 @@ const AppReducer = (state = initialState, action) => {
     let newState = null
 
     switch (action.type) {
-        case AppAction.REQUEST_LOAD_APP_CONFIG_SUCCESS:
+        case AppAction.REQUEST_GET_APP_CONFIG_SUCCESS:
             newState = {
                 ...state,
                 config: action.payload.config,
             }
             break
-        case AppAction.REQUEST_LOAD_APP_CONFIG_ERROR:
+        case AppAction.REQUEST_GET_APP_CONFIG_ERROR:
             newState = {
                 ...state,
                 error: action.payload.error,

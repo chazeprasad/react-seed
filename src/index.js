@@ -22,7 +22,7 @@ const Wrapper = ({ store, theme }) => (
 
 ReactDOM.render(
     <Wrapper store={appStore} theme={appTheme} />,
-    document.getElementById('root')
+    document.getElementById('root'),
 )
 
 serviceWorker.unregister()

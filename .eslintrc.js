@@ -33,18 +33,6 @@ module.exports = {
         },
     },
     rules: {
-        'prettier/prettier': [
-            'error',
-            {
-                useTabs: false,
-                printWidth: 80,
-                tabWidth: 4,
-                singleQuote: true,
-                trailingComma: 'es5',
-                jsxBracketSameLine: false,
-                semi: false,
-            },
-        ],
         'no-var': 2,
         'no-const-assign': 'error',
         radix: 'error',
@@ -60,7 +48,10 @@ module.exports = {
         // Prefer new line before return
         // http://eslint.org/docs/rules/newline-before-return
         'newline-before-return': 'error',
-        'no-use-before-define': ['error', { functions: false, classes: false, variables: false }],
+        'no-use-before-define': [
+            'error',
+            { functions: false, classes: false, variables: false },
+        ],
         'import/no-extraneous-dependencies': 0,
         'import/extensions': 0,
         'import/no-unresolved': 1,

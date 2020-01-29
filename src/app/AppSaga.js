@@ -6,14 +6,14 @@ import { Logger } from './util/Logger'
 
 function* LoadAppConfigWorker(action) {
     try {
-        const response = yield call(AppService.LoadAppConfig)
+        const response = yield call(AppService.LoadAppConfig, { url: action.payload.url })
         if (response.status >= 200 && response.status < 300) {
             const { data } = response
-            Logger.Info(AppAction.REQUEST_LOAD_APP_CONFIG_SUCCESS)
+            Logger.Info(AppAction.REQUEST_GET_APP_CONFIG_SUCCESS)
             yield put(
-                Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG_SUCCESS, {
+                Action.Create(AppAction.REQUEST_GET_APP_CONFIG_SUCCESS, {
                     config: data,
-                })
+                }),
             )
         } else {
             throw response.error
@@ -21,7 +21,7 @@ function* LoadAppConfigWorker(action) {
     } catch (error) {
         Logger.Error(error)
         yield put(
-            Action.Create(AppAction.REQUEST_LOAD_APP_CONFIG_ERROR, { error })
+            Action.Create(AppAction.REQUEST_GET_APP_CONFIG_ERROR, { error }),
         )
     }
 }

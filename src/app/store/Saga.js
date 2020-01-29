@@ -4,8 +4,8 @@ import { AppSaga } from '../AppSaga'
 
 function* Watcher() {
     yield takeLatest(
-        AppAction.REQUEST_LOAD_APP_CONFIG,
-        AppSaga.LoadAppConfigWorker
+        AppAction.REQUEST_GET_APP_CONFIG,
+        AppSaga.LoadAppConfigWorker,
     )
 }
 
